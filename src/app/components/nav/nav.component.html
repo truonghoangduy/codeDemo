@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    (click)="goToHome()"
+    >
+        <mat-icon>{{leftLogo}}</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        [matMenuTriggerFor]="checkoutMenu"
+        (click)="this.getCheckoutInfomation()">
+        
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-menu #checkoutMenu="matMenu">
+    <div mat-menu-item *ngFor="let item of listOfBuyedItem">
+            {{item.getName()}} : {{item.getQuantity()}} : {{item.getPrice()}}$
+    </div>
+
+    <button mat-menu-item class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        (click)="checkout()">
+        {{this.getCheckoutTitle()}}
+    </button>
+</mat-menu>
