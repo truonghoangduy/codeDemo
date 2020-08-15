@@ -1,0 +1,16 @@
+<h1 style="text-align: center;" mat-dialog-title>Add Photo</h1>
+<div mat-dialog-content>
+    <mat-form-field class="inpuField">
+        <mat-label>NAME</mat-label>
+        <input matInput [(ngModel)]="photo.name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="inpuField">
+        <mat-label>URL</mat-label>
+        <input matInput [(ngModel)]="photo.url">
+    </mat-form-field>
+
+    <div class="centerText">
+        <button mat-flat-button (click)="onNoClick()">SAVE</button>
+    </div>
+</div>

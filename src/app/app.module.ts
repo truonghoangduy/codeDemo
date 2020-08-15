@@ -13,11 +13,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {photoReducer} from '../states/reducers/photo.reducer';
 import { PhotoListComponent } from './components/photo-list/photo-list.component'
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddPhotoDialogComponent } from './dialog/add-photo-dialog/add-photo-dialog.component';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    PhotoListComponent
+    PhotoListComponent,
+    AddPhotoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +37,14 @@ import { PhotoListComponent } from './components/photo-list/photo-list.component
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
+    
   ],
+  entryComponents:[AddPhotoDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

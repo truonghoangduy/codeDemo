@@ -4,6 +4,7 @@ import { ListOfPhoto } from 'src/models/photos.model';
 import { Store, select } from '@ngrx/store';
 import { map} from 'rxjs/operators';
 import { Photo } from 'src/models/photo.model';
+import * as photoActions from '../../../states/actions/photo.action';
 
 @Component({
   selector: 'app-photo-list',
@@ -26,6 +27,11 @@ export class PhotoListComponent implements OnInit {
       this.listOfPhoto = photoList;
 
     })
+  }
+  addLike(selectedPhoto:Photo){
+    console.log("add Like");
+    console.log(selectedPhoto);
+    this.store.dispatch(photoActions.like(selectedPhoto));
   }
 
 
